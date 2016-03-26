@@ -3,6 +3,7 @@ import random
 from bs4 import BeautifulSoup
 from tokens import tokens
 from twython import Twython
+import os
 import time
 
 
@@ -346,7 +347,7 @@ def post_tweet(text, image):
     response = twitter.upload_media(media=image)
     twitter.update_status(status=text, media_ids=[response['media_id']])
     print text
-    time.sleep(2)
+    time.sleep(1)
 
 
 def fits_in_tweet(text):
@@ -366,7 +367,10 @@ def main():
             text = write_tweet(title)
             if fits_in_tweet(text):
                 image_path = save_image(image)
-                post_tweet(text, image_path)
+                if os.path.getsize(image_path) <= 5000000:
+                    post_tweet(text, image_path)
+                else:
+                    main()
             else:
                 main()
         else:
