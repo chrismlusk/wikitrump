@@ -1,0 +1,9 @@
+###############
+#Ignore photos#
+###############
+*.jpg
+*.JPG
+*.jpeg
+*.JPEG
+*.png
+*.PNG
