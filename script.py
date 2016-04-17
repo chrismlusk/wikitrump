@@ -44,7 +44,7 @@ insults = [
     'is TERRIBLE for America!',
     'has failed miserably.',
     'is a terrible, terrible thing.',
-    'can\'t make AMERICA GREAT like I will.',
+    'can\'t make AMERICA GREAT like I can.',
     'has got a lot of problems.',
     'has problems. Many respected people say so.',
     'has many, many problems.',
@@ -65,7 +65,6 @@ insults = [
     'failed us very badly.',
     'is so biased against me.',
     'did such a horrible job.',
-    'can\'t be trusted.',
     'is... I shouldn\'t say it, but... is a pussy.',
     'is such a joke and a total loser.',
     'is completely wrong & cannot be trusted.',
@@ -83,7 +82,6 @@ insults = [
     'is doing many bad things.',
     'is very unethical, folks.',
     'doesn\'t know how to win.',
-    'should be FIRED like a dog.',
     'is a total low life.',
     'will NEVER Make America Great Again.',
     'is very uncomfortable.',
@@ -97,7 +95,6 @@ insults = [
     'is a hater (and very boring).',
     'is such a hater.',
     'is a total hater.',
-    'is a hater & a racist.',
     'is a major lightweight.',
     'should be forced to take an IQ test.',
     'knows nothing about business.',
@@ -108,7 +105,6 @@ insults = [
     'has a horrible attitude.',
     'is terrible (and very boring).',
     'is a fool and not trusted by anyone.',
-    'did a terrible job, folks.',
     'is totally irrelevant.',
     'is a real nut job.',
     'is a complete basketcase.',
@@ -257,7 +253,7 @@ def write_tweet(title):
     if any(char.isdigit() for char in title):
         text = "Does anyone really think %s was any good? %s!" % (title, random.choice(endings))
     else:
-        text = "The %s %s %s %s!" % (random.choice(adjectives), title.title(), random.choice(insults), random.choice(endings))
+        text = "The %s %s %s %s!" % (random.choice(adjectives), title, random.choice(insults), random.choice(endings))
     if fits_in_tweet(text):
         return text
 
